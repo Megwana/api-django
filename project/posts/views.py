@@ -6,6 +6,7 @@ from .models import Post
 from .serializers import PostSerializer
 from project.permissions import IsOwnerOrReadOnly
 
+
 class PostList(APIView):
     serializer_class = PostSerializer
     permission_classes = [
@@ -15,27 +16,27 @@ class PostList(APIView):
     def get(self, request):
         posts = Post.objects.all()
         serializer = PostSerializer(
-            posts, many = True, context = {'request': request}
+            posts, many=True, context={'request': request}
         )
         return Response(serializer.data)
-    
+
     def post(self, request):
         serializer = PostSerializer(
-            data=request.data, context ={'request': request}
+            data=request.data, context={'request': request}
         )
         if serializer.is_valid():
             serializer.save(owner=request.user)
             return Response(
                 serializer.data, status=status.HTTP_201_CREATED
             )
-
         return Response(
             serializer.errors, status=status.HTTP_400_BAD_REQUEST
         )
 
+
 class PostDetail(APIView):
-    serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = PostSerializer
 
     def get_object(self, pk):
         try:
@@ -60,4 +61,13 @@ class PostDetail(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            serializer.errors, status=status.HTTP_400_BAD_REQUEST
+        )
+
+    def delete(self, request, pk):
+        post = self.get_object(pk)
+        post.delete()
+        return Response(
+            status=status.HTTP_204_NO_CONTENT
+        )
