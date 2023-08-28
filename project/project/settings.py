@@ -60,7 +60,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'https://git.heroku.com/project-shoe.git']
+ALLOWED_HOSTS = ['localhost', 'https://project-shoe-72a99906ff16.herokuapp.com/']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-megwana-apidjango-dajv8bjqyqq.ws-eu104.gitpod.io'
