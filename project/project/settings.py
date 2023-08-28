@@ -59,15 +59,17 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    'localhost',
+    '3000-megwana-apidjango-dajv8bjqyqq.ws-eu104.gitpod.io',
+    '8000-megwana-apidjango-dajv8bjqyqq.ws-eu104.gitpod.io'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-megwana-apidjango-dajv8bjqyqq.ws-eu104.gitpod.io'
+    'https://8000-megwana-apidjango-dajv8bjqyqq.ws-eu104.gitpod.io',
+    'https://3000-megwana-apidjango-dajv8bjqyqq.ws-eu104.gitpod.io'
 ]
 
 # Application definition
@@ -196,3 +198,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
