@@ -11,13 +11,13 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link>Home</Nav.Link>
-            <Nav.Link>Profile</Nav.Link>
-            <Nav.Link>Posts</Nav.Link>
+            <Nav.Link><i className='fas fa-home'></i> Home</Nav.Link>
+            <Nav.Link><i className='fas fa-user'></i> Profile</Nav.Link>
+            <Nav.Link><i className="fa-solid fa-list-ul"></i> Posts</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link>Login</Nav.Link>
-            <Nav.Link>Register</Nav.Link>
+            <Nav.Link ><i className='fas fa-sign-in-alt'></i> Login</Nav.Link>
+            <Nav.Link><i className='fas fa-user-plus'></i> Register</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
