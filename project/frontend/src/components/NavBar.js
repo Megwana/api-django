@@ -22,12 +22,22 @@ function NavBar() {
             to="/">
               <i className='fas fa-home'></i> Home
             </NavLink>
-            <Nav.Link><i className='fas fa-user'></i> Profile</Nav.Link>
-            <Nav.Link><i className="fa-solid fa-list-ul"></i> Posts</Nav.Link>
+            <NavLink 
+            className={styles.NavLink} 
+            activeClassName={styles.Active} 
+            to="/profile">
+              <i className='fas fa-user'></i> Profile</NavLink>
+            <NavLink 
+            className={styles.NavLink} 
+            activeClassName={styles.Active} 
+            to="/posts"
+            >
+              <i className="fa-solid fa-list-ul"></i> Posts
+              </NavLink>
           </Nav>
           <Nav>
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin"><i className='fas fa-sign-in-alt'></i> Sign In</NavLink>
-            <Nav.Link><i className='fas fa-user-plus'></i> Register</Nav.Link>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/register"><i className='fas fa-user-plus'></i> Register</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
