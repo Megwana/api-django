@@ -1,11 +1,11 @@
 import React from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from "../assets/logo.png"
+import styles from "../styles/NavBar.module.css"
 
 function NavBar() {
   return (
-    <div>
-        <Navbar collapseOnSelect expand="md" fixed="top" className="bg-body-tertiary">
+    <Navbar className={styles.NavBar} collapseOnSelect expand="md" fixed="top">
       <Container>
         <Navbar.Brand><img src={logo} alt="logo" height="45" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -21,8 +21,7 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
-    </div>
+  </Navbar>
   )
 }
 
