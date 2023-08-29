@@ -1,2 +1,0 @@
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'
